@@ -1,19 +1,11 @@
-class User {
-    name: String
-    email: String
-    sex: String
-    age: Int
-    height: Int
-    weight: Int
-
-    constructor(name: String, email: String, sex: String, age: Int, height: Int, weight: Int) {
-        this.name = name
-        this.email = email
-        this.sex = sex
-        this.age = age
-        this.height = height
-        this.weight = weight
-    }
+package src.main.kotlin
+class User constructor(
+    private var name: String,
+    private var email: String,
+    private var sex: String,
+    private var age: Int,
+    private var height: Double,
+    private var weight: Double) {
 
     fun getBMI(): Double {
         return weight / (height * height)
@@ -33,8 +25,8 @@ class User {
         val bmi = getBMI()
         return when {
             bmi < 18.5 -> "Eat more"
-            bmi < 25.0 -> "Eat normally"
-            bmi < 30.0 -> "Eat less"
+            bmi < 25.0 && bmi > 18.5 -> "Eat normally"
+            bmi < 30.0 && bmi > 25.0 -> "Eat less"
             else -> "Eat less and exercise more"
         }
     }
@@ -49,27 +41,11 @@ class User {
         }
     }
 
-    fun showRecommendation() {
-        println("Hello $name, your BMI is $getBMI(). You are classified as $classifyBMI(). $recommendDiet().")
+    fun showRecommendation(): String {
+         return "Hello $name, your BMI is ${getBMI()}. You are classified as ${classifyBMI()}. ${recommendDiet()}."
     }
 
-    fun setWeight(weight: Int) {
+    public fun updateWeight(weight: Double) {
         this.weight = weight
-    }
-    
-    fun setHeight(height: Int) {
-        this.height = height
-    }
-
-    fun setAge(age: Int) {
-        this.age = age
-    }
-
-    fun setEmail(email: String) {
-        this.email = email
-    }
-
-    fun setName(name: String) {
-        this.name = name
     }
 }
