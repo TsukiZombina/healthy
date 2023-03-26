@@ -21,19 +21,19 @@ class Menu {
     }
 
     fun register() {
-        println("Ingresa tu nombre");
-        var name = readln();
+        println("Ingresa tu nombre")
+        var name = readln()
         println("Ingresa tu correo electrónico (opcional)")
-        var email = readlnOrNull();
-        println("Ingresa tu edad (en años)");
-        var age = readln().toInt();
-        println("Ingresa tu peso (en kilogramos)");
+        var email = readlnOrNull()
+        println("Ingresa tu edad (en años)")
+        var age = readln().toInt()
+        println("Ingresa tu peso (en kilogramos)")
         var weight = readln().toFloat()
-        println("Ingresa tu altura (en metros)");
+        println("Ingresa tu altura (en metros)")
         var height = readln().toFloat()
         println("Ingresa tu género (M/F)")
         var sex = readln()
-        val user1 = User(name, email, sex, age, height, weight);
+        val user1 = User(name, email, sex, age, height, weight)
         println(user1.showRecommendation())
     }
 }

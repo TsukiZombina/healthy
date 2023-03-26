@@ -7,7 +7,8 @@ constructor(
         private var age: Int,
         private var height: Float,
         private var weight: Float,
-        private var diet: Diet? = null
+        private var diet: Diet? = null,
+        private var gym: Gym? = null,
 ) {
 
     fun getBMI(): Float {
@@ -36,18 +37,20 @@ constructor(
         return diet.toString()
     }
 
-    fun showRecommendedGym(): String {
+    fun recommendGym(): String {
         val bmi = getBMI()
-        return when {
-            bmi < 18.5 -> "Gym A"
-            bmi < 25.0 -> "Gym B"
-            bmi < 30.0 -> "Gym C"
-            else -> "Gym D"
-        }
+        val gym =
+            when {
+                bmi < 18.5 -> Gym.gymForWeightGain
+                bmi < 25.0 -> Gym.gymForWeightMaintain
+                bmi < 30.0 -> Gym.gymForWeightLoss
+                else -> Gym.gymForWeightLoss
+            }
+        return gym.toString()
     }
 
     fun showRecommendation(): String {
-        return "Hola $name, tu IMC es ${getBMI()}. Por lo que estás clasificado como ${classifyBMI()}. ${recommendDiet()}."
+        return "Hola $name, tu IMC es ${getBMI()}. Por lo que estás clasificado como ${classifyBMI()}. ${recommendDiet()} \nTe aconsejamos visitar el siguiente Gym:\n ${recommendGym()}."
     }
 
     public fun updateWeight(weight: Float) {
