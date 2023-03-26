@@ -1,33 +1,33 @@
 package src.main.kotlin
 class User constructor(
     private var name: String,
-    private var email: String,
+    private var email: String?,
     private var sex: String,
     private var age: Int,
-    private var height: Double,
-    private var weight: Double) {
+    private var height: Float,
+    private var weight: Float) {
 
-    fun getBMI(): Double {
+    fun getBMI(): Float {
         return weight / (height * height)
     }
 
     fun classifyBMI(): String {
         val bmi = getBMI()
         return when {
-            bmi < 18.5 -> "Underweight"
+            bmi < 18.5 -> "Bajo de peso"
             bmi < 25.0 -> "Normal"
-            bmi < 30.0 -> "Overweight"
-            else -> "Obese"
+            bmi < 30.0 -> "Sobrepeso"
+            else -> "Obeso"
         }
     }
 
     fun recommendDiet(): String {
         val bmi = getBMI()
         return when {
-            bmi < 18.5 -> "Eat more"
-            bmi < 25.0 && bmi > 18.5 -> "Eat normally"
-            bmi < 30.0 && bmi > 25.0 -> "Eat less"
-            else -> "Eat less and exercise more"
+            bmi < 18.5 -> "Esta es una dieta para subir de peso"
+            bmi < 25.0 && bmi > 18.5 -> "Esta es una dieta para mantener tu peso"
+            bmi < 30.0 && bmi > 25.0 -> "Esta es una dieta para bajar de peso"
+            else -> "Toma en cuenta el tamaño de tus porciones y haz ejercicio"
         }
     }
 
@@ -42,10 +42,10 @@ class User constructor(
     }
 
     fun showRecommendation(): String {
-         return "Hello $name, your BMI is ${getBMI()}. You are classified as ${classifyBMI()}. ${recommendDiet()}."
+         return "Hola $name, tu IMC es ${getBMI()}. Por lo que estás clasificado como ${classifyBMI()}. ${recommendDiet()}."
     }
 
-    public fun updateWeight(weight: Double) {
+    public fun updateWeight(weight: Float) {
         this.weight = weight
     }
 }
