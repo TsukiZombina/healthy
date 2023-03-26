@@ -5,7 +5,8 @@ class User constructor(
     private var sex: String,
     private var age: Int,
     private var height: Float,
-    private var weight: Float) {
+    private var weight: Float,
+    private var diet: Diet? = null) {
 
     fun getBMI(): Float {
         return weight / (height * height)
@@ -23,12 +24,13 @@ class User constructor(
 
     fun recommendDiet(): String {
         val bmi = getBMI()
-        return when {
-            bmi < 18.5 -> "Esta es una dieta para subir de peso"
-            bmi < 25.0 && bmi > 18.5 -> "Esta es una dieta para mantener tu peso"
-            bmi < 30.0 && bmi > 25.0 -> "Esta es una dieta para bajar de peso"
-            else -> "Toma en cuenta el tamaño de tus porciones y haz ejercicio"
+        val diet = when {
+            bmi < 18.5 -> Diet.weightGainDiet
+            bmi < 25.0 && bmi >= 18.5 -> Diet.weightMaintainDiet
+            bmi < 30.0 && bmi >= 25.0 -> Diet.weightLossDiet
+            else -> Diet.weightLossDiet
         }
+        return diet.toString()
     }
 
     fun showRecommendedGym(): String {
