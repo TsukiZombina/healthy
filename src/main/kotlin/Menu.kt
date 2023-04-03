@@ -1,9 +1,11 @@
 package src.main.kotlin
 
+import kotlin.system.exitProcess
+
 class Menu {
-    val mainGreeting = "Bienvenido a tu aplicación de salud Health"
-    val option1 = "1. Registrarse"
-    val optionFinal = "2. Salir"
+    private val mainGreeting = "Bienvenido a tu aplicación de salud Health"
+    private val option1 = "1. Registrarse"
+    private val optionFinal = "2. Salir"
 
     fun showMenu() {
         println(mainGreeting)
@@ -12,27 +14,26 @@ class Menu {
     }
 
     fun menuSelection() {
-        var option = readln()
-        when (option) {
+        when (readln()) {
             "1" -> register()
-            "2" -> System.exit(0)
+            "2" -> exitProcess(0)
             else -> println("Opción inválida")
         }
     }
 
-    fun register() {
+    private fun register() {
         println("Ingresa tu nombre")
-        var name = readln()
+        val name = readln()
         println("Ingresa tu correo electrónico (opcional)")
-        var email = readlnOrNull()
+        val email = readlnOrNull()
         println("Ingresa tu edad (en años)")
-        var age = readln().toInt()
+        val age = readln().toInt()
         println("Ingresa tu peso (en kilogramos)")
-        var weight = readln().toFloat()
+        val weight = readln().toFloat()
         println("Ingresa tu altura (en metros)")
-        var height = readln().toFloat()
+        val height = readln().toFloat()
         println("Ingresa tu género (M/F)")
-        var sex = readln()
+        val sex = readln()
         val user1 = User(name, email, sex, age, height, weight)
         println(user1.showRecommendation())
     }
