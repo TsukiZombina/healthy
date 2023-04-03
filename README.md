@@ -19,4 +19,7 @@ Funcionalidades:
 - Proporcionar sugerencias de GYM: Para aquellos usuarios que deseen complementar su rutina de ejercicio con una visita al gimnasio, la aplicación proporcionará sugerencias de ejercicios y entrenamientos de acuerdo a su categoría de peso.
 
 ### Diagrama de Flujo
-![diagrama](diagrama.jpg)
+
+<div style="text-align:center;">
+  <img src="diagrama.jpg alt="diagrama" />
+</div>
