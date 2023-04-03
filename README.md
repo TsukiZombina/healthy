@@ -16,4 +16,7 @@ Funcionalidades:
 
 - Proporcionar una rutina de ejercicios: Además del plan alimenticio, la aplicación proporcionará una rutina de ejercicios adecuada al usuario, de manera que pueda mejorar su condición física y llevar un estilo de vida más saludable.
 
-- Proporcionar sugerencias de GYM: Para aquellos usuarios que deseen complementar su rutina de ejercicio con una visita al gimnasio, la aplicación proporcionará sugerencias de ejercicios y entrenamientos de acuerdo a su categoría de peso y nivel de actividad física.
+- Proporcionar sugerencias de GYM: Para aquellos usuarios que deseen complementar su rutina de ejercicio con una visita al gimnasio, la aplicación proporcionará sugerencias de ejercicios y entrenamientos de acuerdo a su categoría de peso.
+
+### Diagrama de Flujo
+![diagrama](diagrama.jpg)
