@@ -1,45 +1,26 @@
 package src.main.kotlin
 
-class WeightGainDiet(
-    dietName: String,
-    dietDescriptionShort: String,
-    dietDescriptionLong: String,
-    dietType: String,
-    dietRestrictions: String,
-    dietCalories: Int,
-    dietProteins: Int,
-    dietCarbohydrates: Int,
-    dietFats: Int,
-    dietFiber: Int?,
-    dietSodium: Int?,
-    dietPotassium: Int?,
-    dietCholesterol: Int?,
-    dietSugars: Int?,
-    dietVitaminA: Int?,
-    dietVitaminC: Int?,
-    dietCalcium: Int?,
-    dietIron: Int?
-) : AbstractDiet() {
+class WeightGainDiet() : AbstractDiet() {
 
     init {
-        this.dietName = dietName
-        this.dietDescriptionShort = dietDescriptionShort
-        this.dietDescriptionLong = dietDescriptionLong
-        this.dietType = dietType
-        this.dietRestrictions = dietRestrictions
-        this.dietCalories = dietCalories
-        this.dietProteins = dietProteins
-        this.dietCarbohydrates = dietCarbohydrates
-        this.dietFats = dietFats
-        this.dietFiber = dietFiber
-        this.dietSodium = dietSodium
-        this.dietPotassium = dietPotassium
-        this.dietCholesterol = dietCholesterol
-        this.dietSugars = dietSugars
-        this.dietVitaminA = dietVitaminA
-        this.dietVitaminC = dietVitaminC
-        this.dietCalcium = dietCalcium
-        this.dietIron = dietIron
+        dietName = "Dieta para aumentar de peso"
+        dietDescriptionShort = "Alimentación para subir de peso"
+        dietDescriptionLong = "Plan Semanal:\n- Lunes: Desayuno - Batido de plátano con mantequilla de maní, Avena con frutos secos | Almuerzo - Pechuga de pollo a la plancha con arroz y frijoles | Cena - Salmón a la parrilla con papas y brócoli asado.\n- Martes: Desayuno - Tostada con aguacate, huevo frito y tomate | Almuerzo - Ensalada de atún con aguacate, tomate y lechuga | Cena - Espagueti a la boloñesa con ensalada de espinacas.\n- Miércoles: Desayuno - Tazón de yogur con granola y frutas | Almuerzo - Hamburguesa con queso y papas fritas | Cena - Pollo al horno con ensalada de espinacas y batata.\n- Jueves: Desayuno - Batido de proteínas con plátano y mantequilla de maní | Almuerzo - Sándwich de pavo con queso y aguacate | Cena - Salmón al horno con arroz integral y espárragos.\n- Viernes: Desayuno - Panqueques con mantequilla de maní y plátano | Almuerzo - Pollo al curry con arroz y ensalada | Cena - Filete con puré de papas y espárragos asados.\n- Sábado: Desayuno - Huevos revueltos con jamón y tostadas | Almuerzo - Ensalada de pollo con aguacate, tomate y lechuga | Cena - Pescado al horno con puré de papas y brócoli asado.\n- Domingo: Desayuno - Tostadas francesas con jarabe de arce y tocino | Almuerzo - Sandwich de jamón y queso con ensalada | Cena - Pollo asado con patatas y ensalada de espinacas."
+        dietType = "Aumento de peso"
+        dietRestrictions = "Ninguna"
+        dietCalories = 2500
+        dietProteins = 100
+        dietCarbohydrates = 300
+        dietFats = 80
+        dietFiber = 25        
+        dietSodium = 2000
+        dietPotassium = 3000
+        dietCholesterol = 100
+        dietSugars = 50
+        dietVitaminA = 5000
+        dietVitaminC = 1000
+        dietCalcium = 800
+        dietIron = 30
     }
 
     override fun toString(): String {

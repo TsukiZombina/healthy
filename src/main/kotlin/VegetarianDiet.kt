@@ -1,45 +1,45 @@
 package src.main.kotlin
 
 class VegetarianDiet(
-    dietName: String,
-    dietDescriptionShort: String,
-    dietDescriptionLong: String,
-    dietType: String,
-    dietRestrictions: String,
-    dietCalories: Int,
-    dietProteins: Int,
-    dietCarbohydrates: Int,
-    dietFats: Int,
-    dietFiber: Int?,
-    dietSodium: Int?,
-    dietPotassium: Int?,
-    dietCholesterol: Int?,
-    dietSugars: Int?,
-    dietVitaminA: Int?,
-    dietVitaminC: Int?,
-    dietCalcium: Int?,
-    dietIron: Int?
+    _dietName: String,
+    _dietDescriptionShort: String,
+    _dietDescriptionLong: String,
+    _dietType: String,
+    _dietRestrictions: String,
+    _dietCalories: Int,
+    _dietProteins: Int,
+    _dietCarbohydrates: Int,
+    _dietFats: Int,
+    _dietFiber: Int?,
+    _dietSodium: Int?,
+    _dietPotassium: Int?,
+    _dietCholesterol: Int?,
+    _dietSugars: Int?,
+    _dietVitaminA: Int?,
+    _dietVitaminC: Int?,
+    _dietCalcium: Int?,
+    _dietIron: Int?
 ) : AbstractDiet() {
 
     init {
-        this.dietName = dietName
-        this.dietDescriptionShort = dietDescriptionShort
-        this.dietDescriptionLong = dietDescriptionLong
-        this.dietType = dietType
-        this.dietRestrictions = dietRestrictions
-        this.dietCalories = dietCalories
-        this.dietProteins = dietProteins
-        this.dietCarbohydrates = dietCarbohydrates
-        this.dietFats = dietFats
-        this.dietFiber = dietFiber
-        this.dietSodium = dietSodium
-        this.dietPotassium = dietPotassium
-        this.dietCholesterol = dietCholesterol
-        this.dietSugars = dietSugars
-        this.dietVitaminA = dietVitaminA
-        this.dietVitaminC = dietVitaminC
-        this.dietCalcium = dietCalcium
-        this.dietIron = dietIron
+        dietName = _dietName
+        dietDescriptionShort = _dietDescriptionShort
+        dietDescriptionLong = _dietDescriptionLong
+        dietType = _dietType
+        dietRestrictions = _dietRestrictions
+        dietCalories = _dietCalories
+        dietProteins = _dietProteins
+        dietCarbohydrates = _dietCarbohydrates
+        dietFats = _dietFats
+        dietFiber = _dietFiber
+        dietSodium = _dietSodium
+        dietPotassium = _dietPotassium
+        dietCholesterol = _dietCholesterol
+        dietSugars = _dietSugars
+        dietVitaminA = _dietVitaminA
+        dietVitaminC = _dietVitaminC
+        dietCalcium = _dietCalcium
+        dietIron = _dietIron
     }
 
     override fun toString(): String {
