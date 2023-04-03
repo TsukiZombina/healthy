@@ -20,6 +20,4 @@ Funcionalidades:
 
 ### Diagrama de Flujo
 
-<div style="text-align:center;">
-  <img src="/diagrama.jpg alt="diagrama" />
-</div>
+![diagram](diagrama.jpg)
