@@ -13,8 +13,7 @@ constructor(
         private var age: Int,
         private var height: Float,
         private var weight: Float,
-        private var diet: AbstractDiet? = null,
-        private var gym: Gym? = null,
+        private var diet: AbstractDiet? = null
 ) {
 
     //Calculates the user's BMI (body mass index) based on the user's height and weight.
@@ -34,7 +33,7 @@ constructor(
     }
 
     //Recommends a specific diet plan based on the user's BMI. It does so by calling the appropriate constructor of one of the three Diet classes: WeightGainDiet, WeightMaintenanceDiet or WeightLossDiet.
-    private fun recommendAbstractDiet(): String{
+    private fun recommendDiet(): String{
         val bmi = getBMI()
         return when {
             bmi < 18.5 -> WeightGainDiet().toString()
@@ -48,17 +47,16 @@ constructor(
         val bmi = getBMI()
         val gym =
             when {
-                bmi < 18.5 -> Gym.gymForWeightGain
-                bmi < 25.0 -> Gym.gymForWeightMaintain
-                bmi < 30.0 -> Gym.gymForWeightLoss
-                else -> Gym.gymForWeightLoss
+                bmi < 18.5 -> WeightGainGym().toString()
+                bmi < 25.0 && bmi >= 18.5 -> WeightMaintenanceGym().toString()
+                else -> WeightLossGym().toString()
             }
         return gym.toString()
     }
 
     //Returns a string that summarizes the user's BMI classification and the corresponding diet and gym recommendations.
     fun showRecommendation(): String {
-        return "Hola $name, tu IMC es ${getBMI()}. Por lo que estás clasificado como ${classifyBMI()}. Por lo que te recomendamos la siguiente dieta:\n${recommendAbstractDiet()} \nTe aconsejamos visitar el siguiente Gym:\n ${recommendGym()}."
+        return "Hola $name, tu IMC es ${getBMI()}. Por lo que estás clasificado como ${classifyBMI()}. Por lo que te recomendamos la siguiente dieta:\n${recommendDiet()} \nTe aconsejamos visitar el siguiente Gym:\n ${recommendGym()}."
     }
 
     //Returns a string that summarizes the user's BMI classification and the corresponding diet and gym recommendations.
