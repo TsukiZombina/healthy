@@ -21,5 +21,5 @@ Funcionalidades:
 ### Diagrama de Flujo
 
 <div style="text-align:center;">
-  <img src="diagrama.jpg alt="diagrama" />
+  <img src="/diagrama.jpg alt="diagrama" />
 </div>
